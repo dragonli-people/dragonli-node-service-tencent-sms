@@ -37,23 +37,3 @@ const {SmsHandler} = require('./TencentCloudHandler');
 
 
 (new AppWithExpress()).start(config);
-
-(async function f() {
-    await sleep(3000);
-    console.log('11111');
-    await axios.post('http://localhost:20001/sms',{
-        appKey:'AKIDzkKgASWc6KKwKabzoOhKjtoRqojJmQ5W',
-        appSecret:'MdmcDXcpnd7MM7iGqMccPyLYrxPdZnEs',
-        smsSdkId:'1400431983',
-        smsSign:'北京传承未来网络科技有限',
-        templateId:'732233',
-        phones:['+8613683553919'],
-        paras:['3223'],
-    });
-    console.log('22222');
-
-    return ;
-    var sms = new SmsHandler('AKIDzkKgASWc6KKwKabzoOhKjtoRqojJmQ5W','MdmcDXcpnd7MM7iGqMccPyLYrxPdZnEs','1400431983');
-    var result = await sms.sendSms('北京传承未来网络科技有限',['+8613521011078'],'732233',['1122']);
-    console.log('=====',result);
-})();
