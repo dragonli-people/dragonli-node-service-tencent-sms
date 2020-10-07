@@ -4,10 +4,10 @@ const {SmsHandler} = require('./TencentCloudHandler');
 class Controller {
     async sms(){
         const {appKey,appSecret,smsSdkId,smsSign,templateId,phones,paras} = this.paras;
-        console.log('===paras',this.paras);
+        // console.log('===paras',this.paras);
         var sms = new SmsHandler(appKey,appSecret,smsSdkId);
         var result = await sms.sendSms(smsSign,phones,templateId,paras);
-        console.log('===r',result);
+        // console.log('===r',result);
         return {result};
     }
 }
